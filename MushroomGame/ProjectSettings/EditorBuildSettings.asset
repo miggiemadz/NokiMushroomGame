@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: a7ffca8e8633ec74d8b80db5724e858e
   - enabled: 1
-    path: Assets/Scenes/PlayerContollerTest.unity
+    path: Assets/Scenes/TestWorld.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
