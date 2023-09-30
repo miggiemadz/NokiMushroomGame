@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MusicController : MonoBehaviour
 {
-
+    public AudioSource Music;
     [SerializeField] Slider musicVolumeSlider;
 
     // Start is called before the first frame update
@@ -20,6 +20,12 @@ public class MusicController : MonoBehaviour
         {
             LoadVolume();
         }
+    }
+
+    private void Update()
+    {
+        Music.volume = musicVolumeSlider.value;
+        SaveVolume();
     }
 
     public void ChangeVolume()
