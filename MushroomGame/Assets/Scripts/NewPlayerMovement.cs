@@ -194,6 +194,5 @@ public class NewPlayerMovement : MonoBehaviour
             rb.velocity -= Vector2.up * fallMultiplier * Time.deltaTime;
         }
     }
-
 }
 

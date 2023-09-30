@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class Acorns : MonoBehaviour
 {
-    private bool isCollected = false;
     public GameObject Noki;
     private float nutPosition;
     public float nutTweenHeight;
     public float nutTweenTime;
+    public int acornsCount;
 
     private void Start()
     {
@@ -19,16 +19,17 @@ public class Acorns : MonoBehaviour
 
     void Update()
     {
-        if (isCollected)
-        {
-            gameObject.SetActive(false);
-        }
+
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        isCollected = true;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+            GameUI.instance.IncreaseAcorns(acornsCount);
+        }
     }
 
     private void Tween()
