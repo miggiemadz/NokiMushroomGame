@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -14,6 +15,9 @@ public class GameUI : MonoBehaviour
 
     public Image[] healthMushrooms;
     public int currentHealth;
+    public int maxHealth;
+    public int mushroomDecayCount;
+    public Byte mushroomDecayColor;
 
     void Awake()
     {
@@ -23,7 +27,10 @@ public class GameUI : MonoBehaviour
     void Start()
     {
         acornCountText.text = "x" + currentAcorns.ToString();
-        currentHealth = 3;
+        mushroomDecayCount = healthMushrooms.Length - 1;
+        maxHealth = healthMushrooms.Length * 5;
+        currentHealth = maxHealth;
+        mushroomDecayColor = 255;
     }
 
 
@@ -52,19 +59,16 @@ public class GameUI : MonoBehaviour
     {
         currentHealth -= value;
 
-        if (currentHealth >= 0 && currentHealth <= 3)
+        if (currentHealth >= 0 && currentHealth % 5 == 0 && currentHealth < maxHealth)
         {
-            for (int i = 0; i < healthMushrooms.Length; i++)
-            {
-                if (i < currentHealth)
-                {
-                    healthMushrooms[i].color = Color.white;
-                }
-                else
-                {
-                    healthMushrooms[i].color = Color.black;
-                }
-            }
+            healthMushrooms[mushroomDecayCount].color = Color.black;
+            mushroomDecayCount -= 1;
+            mushroomDecayColor = 255;
+        }
+        else if (currentHealth >= 0 && currentHealth % 5 != 0 && currentHealth < maxHealth)
+        {
+            mushroomDecayColor -= 51;
+            healthMushrooms[mushroomDecayCount].color = new Color32(mushroomDecayColor, mushroomDecayColor, mushroomDecayColor, 255);
         }
     }
 }
