@@ -5,14 +5,8 @@ using UnityEngine;
 public class HealthManager : MonoBehaviour
 {
 
-    public GameObject Noki;
-    public int damage;
-
-    void Start()
-    {
-        
-    }
-
+    public GameObject Enemy;
+    public Canvas UI;
 
     void Update()
     {

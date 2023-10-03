@@ -7,7 +7,6 @@ using UnityEngine;
 public class NewPlayerMovement : MonoBehaviour
 {
     [SerializeField] public Rigidbody2D rb;
-    [SerializeField] public Animator animator;
     [SerializeField] public SpriteRenderer sprite;
 
     // horizontal movement
@@ -56,7 +55,6 @@ public class NewPlayerMovement : MonoBehaviour
 
     void Update()
     {
-        animator.SetFloat("Movement_Speed", Mathf.Abs(rb.velocity.x));
 
         direction = Input.GetAxisRaw("Horizontal");
 
