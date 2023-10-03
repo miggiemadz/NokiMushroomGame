@@ -7,11 +7,12 @@ TagManager:
   - Pickup
   - FallDetector
   - Nuts
+  - enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - enemy
   - Water
   - UI
   - ground
