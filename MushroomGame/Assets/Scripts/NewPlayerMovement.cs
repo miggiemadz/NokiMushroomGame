@@ -137,7 +137,7 @@ public class NewPlayerMovement : MonoBehaviour
 
     private bool isWalled()
     {
-        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
+        return Physics2D.OverlapCircle(wallCheck.position, 1f, wallLayer);
     }
 
     private void WallJump()
