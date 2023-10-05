@@ -23,6 +23,7 @@ public class NewPlayerMovement : MonoBehaviour
     public float peakHeightMult;
     private float coyoteTimeCounter;
     public float coyoteTime;
+    private bool isFalling;
 
     // wall sliding
     private bool isWallSliding;
@@ -78,6 +79,16 @@ public class NewPlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+        if (rb.velocity.y < 0)
+        {
+            isFalling = true;
+        }
+        else
+        {
+            isFalling = false;
+        }
+
+
         if (isGrounded())
         {
             coyoteTimeCounter = coyoteTime;
@@ -110,8 +121,11 @@ public class NewPlayerMovement : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            isJumping = false;
-            rb.velocity = Vector2.up * peakHeightMult;
+            if (!isFalling)
+            {
+                isJumping = true;
+                rb.velocity = Vector2.up * peakHeightMult;
+            }
         }
 
         if (rb.velocity.y < 0f)
