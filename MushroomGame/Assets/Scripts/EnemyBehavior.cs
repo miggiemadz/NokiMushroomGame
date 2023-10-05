@@ -18,7 +18,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            gameUI.ManageHealth(damage);
+            gameUI.LoseHealth(damage);
         }
     }
 }

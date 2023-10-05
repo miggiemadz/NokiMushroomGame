@@ -138,14 +138,20 @@ public class NewPlayerMovement : MonoBehaviour
         }
     }
 
+
     private void Flip()
     {
-        if (isFacingRight && direction > 0f || !isFacingRight && direction < 0f)
+        if (isFacingRight && direction > 0f)
         {
+            Vector3 rotator = new Vector3(transform.rotation.x, 0f, transform.rotation.z);
+            transform.rotation = Quaternion.Euler(rotator);
             isFacingRight = !isFacingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1f;
-            transform.localScale = localScale;
+        }
+        else if (!isFacingRight && direction < 0f)
+        {
+            Vector3 rotator = new Vector3(transform.rotation.x, 180f, transform.rotation.z);
+            transform.rotation = Quaternion.Euler(rotator);
+            isFacingRight = !isFacingRight;
         }
     }
 
@@ -177,10 +183,7 @@ public class NewPlayerMovement : MonoBehaviour
 
             if (transform.localScale.x != wallJumpingDirection)
             {
-                isFacingRight = !isFacingRight;
-                Vector3 localScale = transform.localScale;
-                localScale.x *= -1f;
-                transform.localScale = localScale;
+                Flip();
             }
 
             Invoke(nameof(StopWallJumping), wallJumpingDuration);

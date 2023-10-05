@@ -38,14 +38,19 @@ public class GameUI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            ManageHealth(1);
+            LoseHealth(1);
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            ManageHealth(-1);
+            GainHealth(1);
         }
 
-        Debug.Log(currentHealth);
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+
+        Debug.Log(mushroomDecayCount);
     }
 
 
@@ -55,7 +60,7 @@ public class GameUI : MonoBehaviour
         acornCountText.text = "x" + currentAcorns.ToString();
     }
 
-    public void ManageHealth(int value)
+    public void LoseHealth(int value)
     {
         currentHealth -= value;
 
@@ -68,6 +73,23 @@ public class GameUI : MonoBehaviour
         else if (currentHealth >= 0 && currentHealth % 5 != 0 && currentHealth < maxHealth)
         {
             mushroomDecayColor -= 51;
+            healthMushrooms[mushroomDecayCount].color = new Color32(mushroomDecayColor, mushroomDecayColor, mushroomDecayColor, 255);
+        }
+    }
+
+    public void GainHealth(int value)
+    {
+        currentHealth += value;
+
+        if (currentHealth >= 0 && currentHealth % 5 == 0 && currentHealth <= maxHealth)
+        {
+            healthMushrooms[mushroomDecayColor].color = Color.white;
+            mushroomDecayCount += 1;
+            mushroomDecayColor = 255;
+        }
+        else if (currentHealth >= 0 && currentHealth % 5 != 0 && currentHealth <= maxHealth)
+        {
+            mushroomDecayColor += 51;
             healthMushrooms[mushroomDecayCount].color = new Color32(mushroomDecayColor, mushroomDecayColor, mushroomDecayColor, 255);
         }
     }
