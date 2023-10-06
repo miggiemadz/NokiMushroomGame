@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using TMPro;
+using Unity.Properties;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
@@ -38,19 +40,13 @@ public class GameUI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            LoseHealth(1);
+            ManageHealth(-1);
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            GainHealth(1);
+            ManageHealth(1);
         }
 
-        if (currentHealth > maxHealth)
-        {
-            currentHealth = maxHealth;
-        }
-
-        Debug.Log(mushroomDecayCount);
     }
 
 
@@ -60,37 +56,48 @@ public class GameUI : MonoBehaviour
         acornCountText.text = "x" + currentAcorns.ToString();
     }
 
-    public void LoseHealth(int value)
+    public void ManageHealth(int value)
     {
-        currentHealth -= value;
+        if (value > 0 && currentHealth < maxHealth)
+        {
+            currentHealth += value;
+        }
+        else if (value < 0 && currentHealth > 0)
+        {
+            currentHealth += value;
+        }
+        if (currentHealth % 5  == 0)
+        {
+            if  (value > 0)
+            {
+                healthMushrooms[mushroomDecayCount].color = Color.white;
+                if (mushroomDecayCount < 2)
+                {
+                    mushroomDecayCount += value;
+                }
+                mushroomDecayColor = 0;
+            }
+            else if (value < 0)
+            {
+                healthMushrooms[mushroomDecayCount].color = Color.black;
+                mushroomDecayColor = 255;
+                mushroomDecayCount += value;
+            }
+        }
+        else
+        {
+            if (value > 0)
+            {
+                mushroomDecayColor += 51;
+                healthMushrooms[mushroomDecayCount].color = new Color32(mushroomDecayColor, mushroomDecayColor, mushroomDecayColor, 255);
+            }
+            else if (value < 0)
+            {
+                mushroomDecayColor -= 51;
+                healthMushrooms[mushroomDecayCount].color = new Color32(mushroomDecayColor, mushroomDecayColor, mushroomDecayColor, 255);
+            }
+        }
 
-        if (currentHealth >= 0 && currentHealth % 5 == 0 && currentHealth < maxHealth)
-        {
-            healthMushrooms[mushroomDecayCount].color = Color.black;
-            mushroomDecayCount -= 1;
-            mushroomDecayColor = 255;
-        }
-        else if (currentHealth >= 0 && currentHealth % 5 != 0 && currentHealth < maxHealth)
-        {
-            mushroomDecayColor -= 51;
-            healthMushrooms[mushroomDecayCount].color = new Color32(mushroomDecayColor, mushroomDecayColor, mushroomDecayColor, 255);
-        }
-    }
-
-    public void GainHealth(int value)
-    {
-        currentHealth += value;
-
-        if (currentHealth >= 0 && currentHealth % 5 == 0 && currentHealth <= maxHealth)
-        {
-            healthMushrooms[mushroomDecayColor].color = Color.white;
-            mushroomDecayCount += 1;
-            mushroomDecayColor = 255;
-        }
-        else if (currentHealth >= 0 && currentHealth % 5 != 0 && currentHealth <= maxHealth)
-        {
-            mushroomDecayColor += 51;
-            healthMushrooms[mushroomDecayCount].color = new Color32(mushroomDecayColor, mushroomDecayColor, mushroomDecayColor, 255);
-        }
+        Debug.Log(currentHealth + ", " + mushroomDecayCount + ", " + mushroomDecayColor);
     }
 }
