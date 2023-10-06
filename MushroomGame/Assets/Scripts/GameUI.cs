@@ -62,19 +62,17 @@ public class GameUI : MonoBehaviour
         {
             currentHealth += value;
         }
-        else if (value < 0 && currentHealth > 0)
+        if (value < 0 && currentHealth > 0)
         {
             currentHealth += value;
         }
+
         if (currentHealth % 5  == 0)
         {
             if  (value > 0)
             {
                 healthMushrooms[mushroomDecayCount].color = Color.white;
-                if (mushroomDecayCount < 2)
-                {
-                    mushroomDecayCount += value;
-                }
+                mushroomDecayCount += value;
                 mushroomDecayColor = 0;
             }
             else if (value < 0)
@@ -88,11 +86,21 @@ public class GameUI : MonoBehaviour
         {
             if (value > 0)
             {
+                if (mushroomDecayColor == 255)
+                {
+                    mushroomDecayCount += value;
+                    mushroomDecayColor = 0;
+                }
                 mushroomDecayColor += 51;
                 healthMushrooms[mushroomDecayCount].color = new Color32(mushroomDecayColor, mushroomDecayColor, mushroomDecayColor, 255);
             }
             else if (value < 0)
             {
+                if(mushroomDecayColor == 0)
+                {
+                    mushroomDecayCount += value;
+                    mushroomDecayColor = 255;
+                }
                 mushroomDecayColor -= 51;
                 healthMushrooms[mushroomDecayCount].color = new Color32(mushroomDecayColor, mushroomDecayColor, mushroomDecayColor, 255);
             }
