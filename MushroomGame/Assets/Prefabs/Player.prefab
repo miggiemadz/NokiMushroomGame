@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2002716896453521965}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.34, y: -0.72, z: -1.6238583}
+  m_LocalPosition: {x: 1.36, y: -0.2, z: -1.6238583}
   m_LocalScale: {x: 5, y: 5.882353, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2007734607034659153}
-  - component: {fileID: 4848174038023334156}
+  - component: {fileID: 8755754441749911683}
   - component: {fileID: 5725208484108802246}
   - component: {fileID: 3330067435479690050}
   - component: {fileID: 2078820317831210083}
@@ -61,15 +61,15 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.4351, y: -1.4185, z: 1.6238583}
-  m_LocalScale: {x: 0.71984, y: 0.590988, z: 1}
+  m_LocalScale: {x: 2.624186, y: 2.0437195, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1644858411191093601}
   - {fileID: 1839977148838751206}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &4848174038023334156
-BoxCollider2D:
+--- !u!70 &8755754441749911683
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -100,19 +100,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.6532483, y: -0.40651864}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.1, y: 6.1}
-    newSize: {x: 8.47, y: 8.76}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.6784668, y: 1.7055923}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.73605806, y: -0.37083286}
+  m_Size: {x: 1.253033, y: 1.6381487}
+  m_Direction: 0
 --- !u!50 &5725208484108802246
 Rigidbody2D:
   serializedVersion: 4
@@ -154,23 +144,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   sprite: {fileID: 2078820317831210083}
-  walkSpeed: 10
-  jumpSpeed: 17
-  fallMultiplier: 25
+  walkSpeed: 20
+  jumpSpeed: 37
+  fallMultiplier: 50
   JumpTimeStart: 0.15
   peakHeightMult: 0.5
   coyoteTime: 0.1
   wallSlidingSpeed: 2
   wallJumpingTime: 0.2
   wallJumpingDuration: 0.4
-  wallJumpingSpeedX: 8
-  wallJumpingSpeedY: 19
+  wallJumpingSpeedX: 20
+  wallJumpingSpeedY: 39
   wallCheck: {fileID: 1644858411191093601}
   wallLayer:
     serializedVersion: 2
     m_Bits: 256
   feetPosition: {fileID: 1839977148838751206}
-  groundCheckRadius: 0.2
+  groundCheckRadius: 2
   groundCheckLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -251,7 +241,7 @@ Transform:
   m_GameObject: {fileID: 6589019443473428127}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.73, y: -1.22, z: -1.5438164}
+  m_LocalPosition: {x: 0.708, y: -1.198, z: -1.5438164}
   m_LocalScale: {x: 5, y: 5.882353, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

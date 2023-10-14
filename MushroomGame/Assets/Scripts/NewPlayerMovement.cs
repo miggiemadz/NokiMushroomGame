@@ -9,12 +9,12 @@ public class NewPlayerMovement : MonoBehaviour
     [SerializeField] public Rigidbody2D rb;
     [SerializeField] public SpriteRenderer sprite;
 
-    // horizontal movement
+    [Header("Horizontal Movement")]
     public float walkSpeed;
     private float direction;
     private bool isFacingRight;
 
-    // verticle movement
+    [Header("Verticle Movement")]
     public float jumpSpeed;
     public float fallMultiplier;
     public float JumpTimeStart;
@@ -25,11 +25,11 @@ public class NewPlayerMovement : MonoBehaviour
     public float coyoteTime;
     private bool isFalling;
 
-    // wall sliding
+    [Header("Wall Sliding")]
     private bool isWallSliding;
     public float wallSlidingSpeed;
 
-    // wall jumping
+    [Header("Wall Jumping")]
     private bool isWallJumping;
     private float wallJumpingDirection;
     public float wallJumpingTime;
@@ -39,11 +39,11 @@ public class NewPlayerMovement : MonoBehaviour
     public float wallJumpingSpeedY;
 
 
-    //Wall Checks
+    [Header("Wall Checks")]
     [SerializeField] public Transform wallCheck;
     [SerializeField] public LayerMask wallLayer;
 
-    //Ground Checks
+    [Header("Floor Checks")]
     [SerializeField] public Transform feetPosition;
     public float groundCheckRadius;
     [SerializeField] public LayerMask groundCheckLayer;
