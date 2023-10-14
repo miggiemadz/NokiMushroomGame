@@ -40,9 +40,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2007734607034659153}
+  - component: {fileID: 3892084297325819224}
   - component: {fileID: 8755754441749911683}
   - component: {fileID: 5725208484108802246}
   - component: {fileID: 3330067435479690050}
+  - component: {fileID: 9197983811131548307}
   - component: {fileID: 2078820317831210083}
   m_Layer: 7
   m_Name: Player
@@ -68,6 +70,41 @@ Transform:
   - {fileID: 1839977148838751206}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &3892084297325819224
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6261502642893267081}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.7353521, y: -0.3710307}
+  m_Size: {x: 1.3241453, y: 1.7264462}
+  m_Direction: 0
 --- !u!70 &8755754441749911683
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -164,6 +201,20 @@ MonoBehaviour:
   groundCheckLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &9197983811131548307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6261502642893267081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49465a13ffbf133408c58ba34dde46d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: 97c4b40e1e2144348a1b834ee6ccb805, type: 2}
+  duration: 0.125
 --- !u!212 &2078820317831210083
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Design;
 using TMPro;
 using Unity.Properties;
+using UnityEditor.SearchService;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +12,8 @@ using UnityEngine.UI;
 public class GameUI : MonoBehaviour
 {
     public static GameUI instance;
+
+    public GameObject deathScrene;
 
     public TMP_Text acornCountText;
     public int currentAcorns = 0;
@@ -47,6 +50,11 @@ public class GameUI : MonoBehaviour
             ManageHealth(1);
         }
 
+        if (currentHealth <= 0)
+        {
+            deathScrene.gameObject.SetActive(true);
+            gameObject.SetActive(false);
+        }
     }
 
 

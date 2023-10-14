@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2911424037772883720}
   - component: {fileID: 1634561671291011404}
+  - component: {fileID: 1982607696769810227}
   - component: {fileID: 8534718547176748012}
   - component: {fileID: 4994342886970646940}
   - component: {fileID: 2478866448878879470}
@@ -96,6 +97,41 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!58 &1982607696769810227
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4510352551714118422}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0062179565, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.8517761
 --- !u!58 &8534718547176748012
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -170,8 +206,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 316b9f8675f33594cb57128912d983df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyDamageCount: 0
-  damageTimer: 0
+  enemyDamageCount: 1
+  damageTimer: 2
+  damageFlash: {fileID: 0}
   Noki: {fileID: 0}
   UI: {fileID: 0}
   target: {fileID: 0}
