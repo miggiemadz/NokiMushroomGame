@@ -5,15 +5,23 @@ using Pathfinding;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    [Header("Damage")]
+    public int enemyDamageCount;
+    public float damageTimer;
+    private bool hasAttacked = false;
+    [SerializeField] private SpriteBlink damageFlash;
+    [SerializeField] private GameObject Noki;
+    [SerializeField] private GameUI UI;
+
     [Header("Pathfinding")]
-    public Transform target;
+    [SerializeField] public Transform target;
     public float activateDistance;
     public float pathUpdateSeconds;
 
     [Header("Physics")]
-    public Transform feetPosition;
+    [SerializeField] public Transform feetPosition;
     public float groundCheckRadius;
-    public LayerMask groundLayer;
+    [SerializeField] public LayerMask groundLayer;
     public float speed;
     public float nextWaypointDistance;
     public float jumpNodeHeightRequirement;
@@ -25,10 +33,11 @@ public class NewBehaviourScript : MonoBehaviour
     public bool directionLookEnabled;
 
     private bool isFacingRight;
-    private Path path;
+    [SerializeField] private Path path;
     private int currentWaypoint = 0;
-    Seeker seeker;
-    Rigidbody2D rb;
+
+    [SerializeField] Seeker seeker;
+    [SerializeField] Rigidbody2D rb;
 
     public void Start()
     {
@@ -36,6 +45,12 @@ public class NewBehaviourScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         InvokeRepeating("UpdatePath", 0f, pathUpdateSeconds);
+    }
+
+    private IEnumerator DamageTaken()
+    {
+        yield return new WaitForSeconds(2);
+        hasAttacked = false;
     }
 
     private void FixedUpdate()
@@ -124,6 +139,17 @@ public class NewBehaviourScript : MonoBehaviour
         {
             path = p;
             currentWaypoint = 0; ;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player") && !hasAttacked)
+        {
+            hasAttacked = true;
+            damageFlash.Flash();
+            UI.ManageHealth(-1);
+            StartCoroutine(DamageTaken());
         }
     }
 }
