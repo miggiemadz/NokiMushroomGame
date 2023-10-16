@@ -6,8 +6,11 @@ using UnityEngine;
 
 public class NewPlayerMovement : MonoBehaviour
 {
-    [SerializeField] public Rigidbody2D rb;
-    [SerializeField] public SpriteRenderer sprite;
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private SpriteRenderer sprite;
+    [SerializeField] private DeathScreen dead;
+    [SerializeField] private PauseMenu menu;
+    
 
     [Header("Horizontal Movement")]
     public float walkSpeed;
@@ -40,35 +43,44 @@ public class NewPlayerMovement : MonoBehaviour
 
 
     [Header("Wall Checks")]
-    [SerializeField] public Transform wallCheck;
-    [SerializeField] public LayerMask wallLayer;
+    [SerializeField] private Transform wallCheck;
+    [SerializeField] private LayerMask wallLayer;
 
     [Header("Floor Checks")]
-    [SerializeField] public Transform feetPosition;
+    [SerializeField] private Transform feetPosition;
     public float groundCheckRadius;
-    [SerializeField] public LayerMask groundCheckLayer;
+    [SerializeField] private LayerMask groundCheckLayer;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
+        dead.isDead = false;
     }
 
     void Update()
     {
+        if (dead.isDead || menu.gameIsPaused)
+        {
+            ;
+        }
 
-        direction = Input.GetAxisRaw("Horizontal");
+        else
+        {
+            direction = Input.GetAxisRaw("Horizontal");
 
 
-        Jump();
+            Jump();
 
-        WallSlide();
+            WallSlide();
 
-        WallJump();
+            WallJump();
 
-        Flip();
+            Flip();
 
-        rb.velocity = new Vector2((walkSpeed * direction), rb.velocity.y);
+            rb.velocity = new Vector2((walkSpeed * direction), rb.velocity.y);
+        }
+
     }
 
 
