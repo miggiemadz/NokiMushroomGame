@@ -6,7 +6,7 @@ using UnityEngine.Animations;
 
 public class WalkingEnemy : MonoBehaviour, IDamageable, IEnemyMoveable
 {
-    public float maxHealth { get; set; }
+    [field: SerializeField] public float maxHealth { get; set; } = 5f;
     public float currentHealth { get; set; }
     public Rigidbody2D rb { get; set; }
     public bool isFacingRight { get; set; } = true;
@@ -54,6 +54,7 @@ public class WalkingEnemy : MonoBehaviour, IDamageable, IEnemyMoveable
     {
         stateMachine.CurrentEnemyState.FrameUpdate();
 
+        // Gets the players position every frame and compares it to the last one in order to tell its direction
         if (previousPosition != gameObject.transform.position)
         {
             direction = (previousPosition - gameObject.transform.position).normalized;
