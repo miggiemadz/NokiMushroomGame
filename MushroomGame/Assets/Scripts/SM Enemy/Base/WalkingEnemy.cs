@@ -59,6 +59,8 @@ public class WalkingEnemy : MonoBehaviour, IDamageable, IEnemyMoveable
             direction = (previousPosition - gameObject.transform.position).normalized;
             previousPosition = transform.position;
         }
+
+        MoveEnemy(rb.velocity);
     }
 
     private void FixedUpdate()
@@ -83,14 +85,7 @@ public class WalkingEnemy : MonoBehaviour, IDamageable, IEnemyMoveable
 
     public void MoveEnemy(Vector2 velocity)
     {
-        if (direction.x == 1)
-        {
-            rb.velocity = new Vector2(walkSpeed, 0f);
-        }
-        else if (direction.x == -1)
-        {
-            rb.velocity = new Vector2(-walkSpeed, 0f);
-        }
+        velocity = new Vector2(walkSpeed * direction.x, 0f);
         CheckForLeftOrRightFacing(velocity);
     }
 
