@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-public class NewBehaviourScript : MonoBehaviour
+public class EnemyBehaviourScript : MonoBehaviour
 {
     [Header("Damage")]
     public int enemyDamageCount;
