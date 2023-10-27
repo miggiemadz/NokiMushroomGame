@@ -10,6 +10,7 @@ public class NewPlayerMovement : MonoBehaviour
     [SerializeField] private SpriteRenderer sprite;
     [SerializeField] private DeathScreen dead;
     [SerializeField] private PauseMenu menu;
+    [SerializeField] private Animator animator;
     
 
     [Header("Horizontal Movement")]
@@ -56,6 +57,7 @@ public class NewPlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
         dead.isDead = false;
+        animator = rb.GetComponent<Animator>();
     }
 
     void Update()
@@ -68,6 +70,7 @@ public class NewPlayerMovement : MonoBehaviour
         else
         {
             direction = Input.GetAxisRaw("Horizontal");
+            animator.SetFloat("horizontalMovement", Mathf.Abs(direction));
 
 
             Jump();
