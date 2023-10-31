@@ -64286,6 +64286,10 @@ PrefabInstance:
       propertyPath: menu
       value: 
       objectReference: {fileID: 1856367478}
+    - target: {fileID: 3330067435479690050, guid: 6d25cfd1cd7a8e645b00069cdcd86979, type: 3}
+      propertyPath: walkSpeed
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3892084297325819224, guid: 6d25cfd1cd7a8e645b00069cdcd86979, type: 3}
       propertyPath: m_Size.x
       value: 1.9861324
