@@ -66,7 +66,7 @@ public class WalkingEnemy : MonoBehaviour, IDamageable, IEnemyMoveable
 
     private void FixedUpdate()
     {
-        stateMachine.CurrentEnemyState.PhysicsUpdate();
+        ;
     }
 
     public void Damage(float damageAmount)
