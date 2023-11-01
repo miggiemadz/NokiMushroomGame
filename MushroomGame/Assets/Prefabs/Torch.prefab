@@ -99,7 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torchLight: {fileID: 503601851189708600}
-  bloomTime: 2
+  lightRadiusSmall: 0.35
+  lightRadiusLarge: 2
 --- !u!1 &8542779086056319564
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8542779086056319564}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.28674945, w: 0.9580056}
+  m_LocalRotation: {x: -0, y: -0, z: -0.29935744, w: 0.9541411}
   m_LocalPosition: {x: -0.09, y: 1.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -171,7 +172,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 2.27
-  m_PointLightOuterRadius: 4.94
+  m_PointLightOuterRadius: 3.5398762
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
