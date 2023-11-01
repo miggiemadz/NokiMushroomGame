@@ -52,6 +52,5 @@ public class TorchTween : MonoBehaviour
             }
         }
 
-        Debug.Log(isIncreasing + ", " + timeElapsed);
     }
 }
