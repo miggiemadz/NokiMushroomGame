@@ -32,6 +32,9 @@ public class EnemyBehaviourScript : MonoBehaviour
     public bool jumpEnabled;
     public bool directionLookEnabled;
 
+    [Header("Animation")]
+    public Animator animator;
+
     private bool isFacingRight;
     [SerializeField] private Path path;
     private int currentWaypoint = 0;
@@ -43,6 +46,7 @@ public class EnemyBehaviourScript : MonoBehaviour
     {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
         InvokeRepeating("UpdatePath", 0f, pathUpdateSeconds);
     }
@@ -51,6 +55,11 @@ public class EnemyBehaviourScript : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         hasAttacked = false;
+    }
+
+    private void Update()
+    {
+        animator.SetFloat("Movement", Mathf.Abs(rb.velocity.x));
     }
 
     private void FixedUpdate()
