@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Design;
 using TMPro;
 using Unity.Properties;
-using UnityEditor.SearchService;
-using UnityEditorInternal;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
