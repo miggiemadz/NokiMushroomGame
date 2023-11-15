@@ -1,27 +1,27 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
 
-public class CameraChanger : MonoBehaviour
+public class MainBossCorridor : MonoBehaviour
 {
-    [SerializeField] CinemachineVirtualCamera miniBossHallCamera;
+    [SerializeField] CinemachineVirtualCamera mainBossCorridor;
 
     private void OnEnable()
     {
-        CameraSwitcher.Register(miniBossHallCamera);
+        CameraSwitcher.Register(mainBossCorridor);
     }
 
     private void OnDisable()
     {
-        CameraSwitcher.Unregister(miniBossHallCamera);
+        CameraSwitcher.Unregister(mainBossCorridor);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            CameraSwitcher.SwitchCamera(miniBossHallCamera);
+            CameraSwitcher.SwitchCamera(mainBossCorridor);
         }
     }
 }

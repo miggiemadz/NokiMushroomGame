@@ -1,27 +1,27 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
 
-public class CameraChanger : MonoBehaviour
+public class WeevilsDen : MonoBehaviour
 {
-    [SerializeField] CinemachineVirtualCamera miniBossHallCamera;
+    [SerializeField] CinemachineVirtualCamera weevilsDen;
 
     private void OnEnable()
     {
-        CameraSwitcher.Register(miniBossHallCamera);
+        CameraSwitcher.Register(weevilsDen);
     }
 
     private void OnDisable()
     {
-        CameraSwitcher.Unregister(miniBossHallCamera);
+        CameraSwitcher.Unregister(weevilsDen);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            CameraSwitcher.SwitchCamera(miniBossHallCamera);
+            CameraSwitcher.SwitchCamera(weevilsDen);
         }
     }
 }
