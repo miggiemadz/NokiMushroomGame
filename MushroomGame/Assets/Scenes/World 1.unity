@@ -1863,6 +1863,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 383838153}
+  - component: {fileID: 383838154}
   m_Layer: 0
   m_Name: CWC Camera System
   m_TagString: Untagged
@@ -1888,6 +1889,38 @@ Transform:
   - {fileID: 1709712570}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &383838154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383838152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 512c830993827e541998f2fbc9c63c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CWCCameras:
+  - {fileID: 177995936}
+  - {fileID: 454649052}
+  - {fileID: 1094606831}
+  - {fileID: 1686373073}
+  - {fileID: 1103753592}
+  - {fileID: 1389916305}
+  - {fileID: 753998541}
+  CWCCameraSwitchers:
+  - {fileID: 1918181680}
+  - {fileID: 1622287574}
+  - {fileID: 299357906}
+  - {fileID: 1956019711}
+  - {fileID: 1232121068}
+  - {fileID: 1726796726}
+  - {fileID: 605652318}
+  - {fileID: 846327002}
+  - {fileID: 1569366211}
+  - {fileID: 1590911344}
+  - {fileID: 277386685}
 --- !u!1001 &390971611
 PrefabInstance:
   m_ObjectHideFlags: 0
