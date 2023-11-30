@@ -8,6 +8,13 @@ TagManager:
   - FallDetector
   - Nuts
   - enemy
+  - MainRoom
+  - MiniBossHall
+  - MiniBossRoom
+  - Weevil's Den
+  - MainBoss
+  - MainBossHall
+  - MainBossFall
   layers:
   - Default
   - TransparentFX

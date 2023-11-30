@@ -1073,7 +1073,7 @@ GameObject:
   - component: {fileID: 277386684}
   m_Layer: 0
   m_Name: MainBossRoom
-  m_TagString: Untagged
+  m_TagString: MainBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1216,7 +1216,7 @@ GameObject:
   - component: {fileID: 299357905}
   m_Layer: 0
   m_Name: CwC Main
-  m_TagString: Untagged
+  m_TagString: MainRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1909,18 +1909,18 @@ MonoBehaviour:
   - {fileID: 1103753592}
   - {fileID: 1389916305}
   - {fileID: 753998541}
-  CWCCameraSwitchers:
-  - {fileID: 1918181680}
-  - {fileID: 1622287574}
-  - {fileID: 299357906}
-  - {fileID: 1956019711}
-  - {fileID: 1232121068}
-  - {fileID: 1726796726}
-  - {fileID: 605652318}
-  - {fileID: 846327002}
-  - {fileID: 1569366211}
-  - {fileID: 1590911344}
-  - {fileID: 277386685}
+  cameraChangers:
+  - {fileID: 1918181678}
+  - {fileID: 1622287571}
+  - {fileID: 299357903}
+  - {fileID: 1956019708}
+  - {fileID: 1232121065}
+  - {fileID: 1726796724}
+  - {fileID: 605652316}
+  - {fileID: 846326999}
+  - {fileID: 1569366208}
+  - {fileID: 1590911341}
+  - {fileID: 277386682}
 --- !u!1001 &390971611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41409,7 +41409,7 @@ GameObject:
   - component: {fileID: 605652319}
   m_Layer: 0
   m_Name: Weevil's Den
-  m_TagString: Untagged
+  m_TagString: Weevil's Den
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107584,7 +107584,7 @@ GameObject:
   - component: {fileID: 846327001}
   m_Layer: 0
   m_Name: MainBossCorridor
-  m_TagString: Untagged
+  m_TagString: MainBossHall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109117,7 +109117,7 @@ GameObject:
   - component: {fileID: 1232121067}
   m_Layer: 0
   m_Name: CwC Main (2)
-  m_TagString: Untagged
+  m_TagString: MainRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110406,7 +110406,7 @@ GameObject:
   - component: {fileID: 1569366210}
   m_Layer: 0
   m_Name: MainBossCorridor (1)
-  m_TagString: Untagged
+  m_TagString: MainBossHall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110601,7 +110601,7 @@ GameObject:
   - component: {fileID: 1590911343}
   m_Layer: 0
   m_Name: MainBossFall
-  m_TagString: Untagged
+  m_TagString: MainBossFall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110864,7 +110864,7 @@ GameObject:
   - component: {fileID: 1622287573}
   m_Layer: 0
   m_Name: MiniBossHall (1)
-  m_TagString: Untagged
+  m_TagString: MiniBossHall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111819,7 +111819,7 @@ GameObject:
   - component: {fileID: 1726796727}
   m_Layer: 0
   m_Name: Mini Boss Room
-  m_TagString: Untagged
+  m_TagString: MiniBossRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112744,7 +112744,7 @@ GameObject:
   - component: {fileID: 1918181681}
   m_Layer: 0
   m_Name: MiniBossHall
-  m_TagString: Untagged
+  m_TagString: MiniBossHall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112994,7 +112994,7 @@ GameObject:
   - component: {fileID: 1956019710}
   m_Layer: 0
   m_Name: CwC Main (1)
-  m_TagString: Untagged
+  m_TagString: MainRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
